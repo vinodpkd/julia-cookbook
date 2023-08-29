@@ -1,3 +1,4 @@
+# Example of using heapq to find the N smallest or largest items
 
 portfolio = [
    Dict("name"=> "IBM", "shares"=> 100, "price"=> 91.2),
@@ -22,3 +23,5 @@ portfolio = [
        ]
 
 sort(portfolio, by = row->row.price)[1:N]
+
+#https://stackoverflow.com/questions/76999854/how-to-sort-a-list-of-dictionaries-in-julia/76999974#76999974
