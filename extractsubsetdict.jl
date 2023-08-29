@@ -1,3 +1,4 @@
+# example of extracting a subset from a dictionary
 prices = Dict(
    "ACME" => 45.23,
    "AAPL" => 612.78,
