@@ -33,5 +33,8 @@ addresses = [
 counts = [0, 3, 10, 4, 1, 7, 6, 1]
 
 more5 = [n > 5 for n in counts]
-a = [addresses[i] for i in eachindex(more5) if true == more5[i]]
+addresses[more5]
+#a = [addresses[i] for i in eachindex(more5) if true == more5[i]]
+#a = [a for (a, c) in Iterators.zip(addresses, counts) if c > 5]
+#a = addresses[filter(i -> counts[i] > 5, 1:length(counts))]
 println(a)
