@@ -33,5 +33,5 @@ addresses = [
 counts = [0, 3, 10, 4, 1, 7, 6, 1]
 
 more5 = [n > 5 for n in counts]
-a = filter(more5, addresses)
+a = [addresses[i] for i in eachindex(more5) if true == more5[i]]
 println(a)
