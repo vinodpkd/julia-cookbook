@@ -1,39 +1,12 @@
 using DataStructures
+x = PriorityQueue{String, Int}(Base.Order.Reverse)
 
-struct PriorityQueue{T}
-    queue::Vector{T}
-    index::Int
-end
+enqueue!(x,"foo" => 1)
+enqueue!(x,"bar" => 5)
+enqueue!(x,"spam" => 4)
+enqueue!(x,"grok" => 1)
 
-function PriorityQueue{T}() where T
-    PriorityQueue{T}([], 0)
-end
-
-function push!(pq::PriorityQueue{T}, item::Any, priority::Real) where T
-    pq.index += 1
-    heappush!(pq.queue, (-priority, pq.index, item))
-end
-
-function pop!(pq::PriorityQueue{T}) where T
-    heappop!(pq.queue)[-1]
-end
-
-# Example use
-struct Item
-    name::String
-end
-
-function Base.show(io::IO, item::Item)
-    print(io, "Item($(item.name))")
-end
-
-pq = PriorityQueue{Item}()
-Base.push!(pq, Item("foo"), 1)
-Base.push!(pq, Item("bar"), 5)
-Base.push!(pq, Item("spam"), 4)
-Base.push!(pq, Item("grok"), 1)
-
-println("Should be bar: ", pop!(pq))
-println("Should be spam: ", pop!(pq))
-println("Should be foo: ", pop!(pq))
-println("Should be grok: ", pop!(pq))
+println("Should be bar: ",dequeue_pair!(x))
+println("Should be spam: ",dequeue_pair!(x))
+println("Should be grok: ",dequeue_pair!(x))
+println("Should be foo: ",dequeue_pair!(x))
