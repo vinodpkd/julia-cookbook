@@ -12,3 +12,5 @@ sort(rows, by = x -> x["uid"])
 
 # sort list of Dicts by two keys simultaneously
 sort(rows, by = x -> (x["lname"], x["fname"]))
+
+#How to sort by lname ascending and fname descending
