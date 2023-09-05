@@ -16,3 +16,18 @@ for b in a
 	end
 end
 =#
+
+# Output a tuple as CSV
+
+a = join((string(x) for x in (1,"1","c",1)),",")
+
+# Data reduction across fields of a data structure
+
+portfolio = [Dict("name" => "GOOG", "shares" =>  50),
+	   Dict("name" => "YHOO", "shares" =>  75),
+	   Dict("name" => "AOL", "shares" =>  20),
+	   Dict("name" => "SCOX", "shares" =>  65)]
+
+minm = minimum((row["shares"] for row in portfolio))
+
+minm,maxm = extrema((row["shares"] for row in portfolio))
