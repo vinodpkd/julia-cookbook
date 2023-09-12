@@ -1,7 +1,7 @@
 path = "C/abc"
 a = readdir(path)
 
-if any(endswith(b,".py") for b in a)
+if any(endswith(b,".jl") for b in a)
 	println("Julia")
 else
 	println("No Julia")
