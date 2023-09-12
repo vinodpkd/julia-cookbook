@@ -10,7 +10,7 @@ end
 #=
 for b in a
 	if endswith(b,".jl")
-	  println("Python")
+	  println("Julia")
 	else
 	  println("No Julia")
 	end
